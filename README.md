@@ -19,11 +19,11 @@ docker push asia-southeast1-docker.pkg.dev/beam-372120/mediasoup-demo/mediasoup-
 
 ### Deploy stunner gateway
 ```
+helm repo add stunner https://l7mp.io/stunner
+helm repo update
+helm install stunner-gateway-operator stunner/stunner-gateway-operator-dev --create-namespace --namespace=stunner-system
 
-kubectl apply -n stunner -f stunner-gatewayclass.yaml
-kubectl apply -n stunner -f stunner-gatewayconfig.yaml
-kubectl apply -n stunner -f udp-gateway.yaml
-kubectl apply -n stunner -f livekit-media-plane.yaml
+kubectl apply -f mediasoup-call-stunner.yaml
 
 ```
 
