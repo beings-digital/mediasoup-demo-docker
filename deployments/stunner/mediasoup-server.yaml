@@ -26,7 +26,7 @@ spec:
       - env:
         - name: PROTOO_LISTEN_PORT
           value: "443"
-        image: asia-southeast1-docker.pkg.dev/beam-372120/mediasoup-demo/mediasoup-demo-docker:latest
+        image: asia-southeast1-docker.pkg.dev/beam-372120/mediasoup-demo/mediasoup-demo-docker:v1
         imagePullPolicy: IfNotPresent
         name: mediasoup-server
         ports:

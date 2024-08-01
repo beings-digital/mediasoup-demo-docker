@@ -5,7 +5,7 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    email: anhttok@gmail.com
+    email: minh.luu@beings.com
     privateKeySecretRef:
       name: letsencrypt-secret-prod
     server: https://acme-v02.api.letsencrypt.org/directory

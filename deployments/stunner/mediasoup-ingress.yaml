@@ -3,15 +3,14 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    spec.ingressClassName: nginx
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/upstream-hash-by: "$arg_roomId"
     cert-manager.io/issue-temporary-certificate: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
-    cert-manager.io/common-name: mediasoup-demo.beings.com
   name: mediasoup-server
   namespace: mediasoup
 spec:
+  ingressClassName: nginx
   rules:
   - host: mediasoup-demo.beings.com
     http:
@@ -26,4 +25,4 @@ spec:
   tls:
   - hosts:
     - mediasoup-demo.beings.com
-    secretName: mediasoup-demo-tls
+    secretName: mediasoup-demo.beings.com-tls
